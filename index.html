@@ -1,227 +1,271 @@
-
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="generate travel related queries using LLMs">
-  <meta name="keywords"
-        content="SynthTRIPS, text-to-text generation, LLMs, RecSys">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SynthTRIPS: A Knowledge-Grounded Framework for Benchmark Query Generation in Personalized Tourism Recommenders</title>
+    <meta charset="utf-8">
+    <meta content="generate travel related queries using LLMs"
+          name="description">
+    <meta content="SynthTRIPS, text-to-text generation, LLMs, RecSys"
+          name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>SynthTRIPS: A Knowledge-Grounded Framework for Benchmark Query
+        Generation in Personalized Tourism Recommenders</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet"
-       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="stylesheet" href="./static/css/grid.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bibtex-js/0.3.0/bibtex.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-  <style>
-    .video-margin {
-      margin-bottom: 20px;
-    }
-  </style>
-  <style>
-    .reduce-space {
-      margin-bottom: -100px;
-    }
-  </style>
+    <link href="./static/css/bulma.min.css" rel="stylesheet">
+    <link href="./static/css/bulma-carousel.min.css" rel="stylesheet">
+    <link href="./static/css/bulma-slider.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+          rel="stylesheet">
+    <link href="./static/css/index.css" rel="stylesheet">
+    <link href="./static/css/grid.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bibtex-js/0.3.0/bibtex.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <style>
+        .video-margin {
+            margin-bottom: 20px;
+        }
+    </style>
+    <style>
+        .reduce-space {
+            margin-bottom: -100px;
+        }
+    </style>
 </head>
 <body>
 
 
 <section class="hero">
-  <div class="reduce-space">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title"><span
-                    class='main-title'>SynthTRIPS: A
+    <div class="reduce-space">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-2 publication-title"><span
+                                class='main-title'>SynthTRIPS: A
                 Knowledge-Grounded
                 Framework for Benchmark Query Generation for Personalized
                 Tourism Recommenders</span></h1>
-            <div class="is-size-5 publication-authors">
+                        <div class="is-size-5 publication-authors">
                     <span class="author-block">
                         <a href="https://ashmibanerjee.com">Ashmi
                           Banerjee</a><sup>1
                     </sup>,
                     </span>
-              <span class="author-block">
+                            <span class="author-block">
                       <a
                               href="https://www.linkedin.com/in/adithi-satish/">Adithi Satish</a><sup>1</sup>,
                     </span>
-              <span class="author-block">
+                            <span class="author-block">
                         <a href="https://www.linkedin.com/in/esakk/">Fitri Nur
                           Aisyah</a><sup>1</sup>,
                     </span>
-              <span class="author-block">
+                            <span class="author-block">
                         <a href="https://www.ce.cit.tum.de/cm/research-group/wolfgang-woerndl">Wolfgang
                           Wörndl</a><sup>1</sup>, and
                     </span>
-              <span class="author-block">
+                            <span class="author-block">
                         <a href="https://yasdel.github.io/">Yashar
                           Deldjoo</a><sup>2</sup>
                     </span>
-            </div>
+                        </div>
 
-            <div class="is-size-5 publication-authors">
+                        <div class="is-size-5 publication-authors">
               <span class="author-block"><sup>1*</sup>Technical
                 University of Munich, Germany</span>
-              <span class="author-block"><sup>2</sup>Polytechnic University
+                            <span class="author-block"><sup>2</sup>Polytechnic University
                 of Bari, Italy</span>
-            </div>
+                        </div>
 
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- PDF Link. -->
-                <span class="link-block">
-                          <a href=""
-                             class="external-link button is-normal is-rounded is-dark">
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- PDF Link. -->
+                                <span class="link-block">
+                          <a class="external-link button is-normal is-rounded is-dark"
+                             href="">
                           <span class="icon">
                               <i class="fas fa-file-pdf"></i>
                           </span>
                           <span>Paper</span>
                           </a>
                       </span>
-                <span class="link-block">
-                          <a href=""
-                             class="external-link button is-normal is-rounded is-dark">
+                                <span class="link-block">
+                          <a class="external-link button is-normal is-rounded is-dark"
+                             href="">
                           <span class="icon">
                               <i class="ai ai-arxiv"></i>
                           </span>
                           <span>arXiv</span>
                           </a>
                       </span>
-                <!-- Demo Link. -->
-                <span class="link-block">
-                    <a href="https://huggingface.co/spaces/ashmib/user-feedback"
-                    class="external-link button is-normal is-rounded is-dark">
+                                <!-- Demo Link. -->
+                                <span class="link-block">
+                    <a class="external-link button is-normal is-rounded is-dark"
+                       href="https://huggingface.co/spaces/ashmib/user-feedback">
                     <span class="icon">
                       <i class="fab fa-hotjar"></i>
                     </span>
                     <span>Tool</span>
                     </a>
                 </span>
-                <!-- Code Link. -->
-                <span class="link-block">
-                            <a href="https://github.com/ashmibanerjee/synthTRIPS-code"
-                               class="external-link button is-normal is-rounded is-dark">
+                                <!-- Code Link. -->
+                                <span class="link-block">
+                            <a class="external-link button is-normal is-rounded is-dark"
+                               href="https://github.com/ashmibanerjee/synthTRIPS-code">
                             <span class="icon">
                                <i class="fab fa-github"></i>
                             </span>
                             <span>Code</span>
                             </a>
                 </span>
-                <!-- Dataset Link. -->
-                <span class="link-block">
-                    <a href="https://huggingface.co/datasets/ashmib/synthTRIPS"
-                    class="external-link button is-normal is-rounded is-dark">
+                                <!-- Dataset Link. -->
+                                <span class="link-block">
+                    <a class="external-link button is-normal is-rounded is-dark"
+                       href="https://huggingface.co/datasets/ashmib/synthTRIPS">
                     <span class="icon">
                         <i class="far fa-images"></i>
                     </span>
                     <span>Data</span>
                     </a> </span>
-              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
 
 <section class="section">
-  <br><br>
-  <div class="container is-max-desktop">
-    <div class="rows is-centered">
-      <div class="row">
-        <h2 class="title is-3 has-text-centered">Abstract</h2>
-      </div>
-      <br><br>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-      </p>
-      <br><br>
-      <br><br>
+    <br><br>
+    <div class="container is-max-desktop">
+        <div class="rows is-centered">
+            <div class="row">
+                <h2 class="title is-3 has-text-centered">Abstract</h2>
+            </div>
+            <br><br>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+            </p>
+            <br><br>
+            <br><br>
 
-      <div class="row">
-        <h2 class="title is-3 has-text-centered">SynthTRIPS</h2>
-      </div>
-      <br><br>
-      <p>
-        Our methodology is built on.... [add method description + flowchart]
-      </p>
-      <br><br>
-      <img src="images/methodology.png" alt="Method Overview">
-      <br><br>
-      <br><br>
-      <div class="row">
-        <h2 class="title is-3 has-text-centered">Dataset</h2>
-      </div>
-      <br><br>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <br> Explain the data folder structure here & provide an overview of
-        the data (size, format etc).
-        <br> Also explain the Knowledge Base (with image of the cities) and
-        short description of the data (200 cities, 43 countries in Europe,
-        spanning across low, medium, high popularity, seasonality, etc.)
-        <p>
-            <br><a
-                href="https://huggingface.co/datasets/ashmib/synthTRIPS"
-                style="font-size: large"
-        >[Link to Data Repository] </a>
-        </p>
-      <br><br>
-        <div class="row">
-            <h2 class="title is-3 has-text-centered">Code</h2>
+            <div class="row">
+                <h2 class="title is-3 has-text-centered">SynthTRIPS</h2>
+            </div>
+            <br><br>
+            <p>
+                Our methodology is built on.... [add method description +
+                flowchart]
+            </p>
+            <br><br>
+            <img alt="Method Overview" src="images/methodology.png">
+            <br><br>
+            <br><br>
+            <div class="row">
+                <h2 class="title is-3 has-text-centered">Dataset</h2>
+            </div>
+            <br><br>
+            <p>
+<!--                <br>-->
+                <a
+                    href="https://huggingface.co/datasets/ashmib/synthTRIPS"
+                    style="font-size: large"
+            >[Link to Data Repository] </a>
+            </p> <br>
+            <ul style="list-style-type:disc;">
+                <li>A
+                    <strong><a href="https://huggingface.co/datasets/ashmib/synthTRIPS/blob/main/kb/eu-cities-database.csv">comprehensive Knowledge Base (KB)</a></strong> covering
+                    <strong>200
+                    European cities
+                    across 43 countries</strong>.
+                    <ul style="list-style-type:circle; padding-left: 2rem;">
+                        <li> It includes detailed
+                            information on points
+                            of interest (e.g., attractions, activities, and destinations),</li>
+                        <li>Destination popularity</li>
+                        <li>Estimated monthly visitor footfall
+                            (seasonality) and</li>
+                        <li>Key sustainability metrics such as
+                            walkability and air quality index (AQI). </li>
+                    </ul>
+              This Knowledge Base <strong>(.csv format)</strong> was used to generate queries
+                    using
+                    LLMs.</li>
+                <br>
+                <li>
+                    Synthetic travel queries <strong>(.json format)</strong>
+                    generated for
+                    <strong>2302
+                        configurations</strong> in 3
+                    settings --
+                    <strong> vanilla
+                    (v/Non-personalized),
+                    personalized-zero-shot (p0) and personalized-single-shot
+                        (p1)</strong> using:
+                    <ul style="list-style-type:circle; padding-left: 2rem;">
+                        <li style="font-weight: bold"> <a
+                                href="https://huggingface.co/datasets/ashmib/synthTRIPS/blob/main/generated-queries/Llama3Point2Vision90B_generated_queries.json"> Llama-3.2-90b </a></li>
+                        <li style="font-weight: bold"> <a
+                                href="https://huggingface.co/datasets/ashmib/synthTRIPS/blob/main/generated-queries/Gemini1Point5Pro_generated_queries.json">Gemini-1.5-pro-002 </a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <br><br>
+            <div class="row">
+                <h2 class="title is-3 has-text-centered">Code</h2>
+            </div>
+            <br><br>
+            <p>
+                Our code for query generation and subsequent evaluation of the
+                queries have been made public here. [TODO add link to repo]
+            </p>
+            <p>
+                <br><a
+                    href="https://github.com/ashmibanerjee/synthTRIPS-code"
+                    style="font-size: large"
+            >[Link to Code @ GitHub] </a>
+            </p>
+            <br><br>
+            <div class="row">
+                <h2 class="title is-3 has-text-centered">Evaluation Tool</h2>
+            </div>
+            <br><br>
+            <p>Say what the tool is about etc.</p>
+            <figure>
+                <img alt="Evaluation Tool" src="./static/images/eval_tool.png">
+                <figcaption style="text-align: center">Screenshot from our <a
+                        href="https://huggingface.co/spaces/ashmib/user-feedback">
+                    Expert
+                    Evaluation
+                    Tool</a> hosted on HuggingFace Spaces.
+                </figcaption>
+            </figure>
+            <br><br>
         </div>
-        <br><br>
-        <p>
-            Our code for query generation and subsequent evaluation of the
-            queries have been made public here. [TODO add link to repo]
-        </p>
-        <p>
-            <br><a
-                href="https://github.com/ashmibanerjee/synthTRIPS-code"
-                style="font-size: large"
-        >[Link to Code @ GitHub] </a>
-        </p>
-        <br><br>
-        <div class="row">
-            <h2 class="title is-3 has-text-centered">Evaluation Tool</h2>
-        </div>
-        <br><br>
-        <p>Say what the tool is about etc.</p>
-        <figure>
-        <img src="./static/images/eval_tool.png" alt="Evaluation Tool">
-            <figcaption style="text-align: center">Screenshot from our <a
-                    href="https://huggingface.co/spaces/ashmib/user-feedback"> Expert
-                Evaluation
-                Tool</a> hosted on HuggingFace Spaces.</figcaption>
-        </figure>
-        <br><br>
     </div>
-  </div>
 </section>
 <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{banerjee2025synthTRIPS,
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@misc{banerjee2025synthTRIPS,
       title={SynthTRIPS: TBD title},
       author={Ashmi Banerjee and Adithi Satish and Fitri Nur Aisyah and
       Wolfgang Wörndl and Yashar Deldjoo},
@@ -230,22 +274,24 @@
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }</code></pre>
-  </div>
+    </div>
 </section>
 
 
 <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content has-text-centered">
-          <p>
-            Website source based on <a href="https://github.com/nerfies/nerfies.github.io">this source code</a>.
-          </p>
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content has-text-centered">
+                    <p>
+                        Website source based on <a
+                            href="https://github.com/nerfies/nerfies.github.io">this
+                        source code</a>.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </footer>
 
 </body>
