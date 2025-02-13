@@ -27,16 +27,6 @@
     <script src="./static/js/bulma-carousel.min.js"></script>
     <script src="./static/js/bulma-slider.min.js"></script>
     <script src="./static/js/index.js"></script>
-    <style>
-        .video-margin {
-            margin-bottom: 20px;
-        }
-    </style>
-    <style>
-        .reduce-space {
-            margin-bottom: -100px;
-        }
-    </style>
 </head>
 <body>
 
@@ -183,11 +173,10 @@
             </div>
             <br><br>
             <p>
-<!--                <br>-->
                 <a
                     href="https://huggingface.co/datasets/ashmib/synthTRIPS"
                     style="font-size: large"
-            >[Link to Data Repository] </a>
+            >[Data Repository] </a>
             </p> <br>
             <ul style="list-style-type:disc;">
                 <li>A
@@ -234,7 +223,7 @@
                          style="width: 100%; height: 100%; object-fit:
                          cover;">
                     <figcaption
-                            style="text-align: center; margin-top: 5px;">Distribution of the cities in our KB, grouped by popularity levels.</figcaption>
+                            style="text-align: center; margin-top: 15px;">Distribution of the cities in our KB, grouped by popularity levels.</figcaption>
                 </figure>
                 <figure style="text-align: center; margin-bottom: 0;">
                     <img src="static/images/gt_cities_distr.png"
@@ -245,12 +234,6 @@
                             style="text-align: center; margin-top: 5px;">Distribution of number of ground truth cities in Generated Queries dataset grouped by complexity.</figcaption>
                 </figure>
             </div>
-
-
-
-
-        </div>
-
             <br><br>
             <div class="row">
                 <h2 class="title is-3 has-text-centered">Code</h2>
@@ -282,14 +265,20 @@
                 </figcaption>
             </figure>
             <br><br>
+            <div class="row">
+                <h2 class="title is-3 has-text-centered">Acknowledgements</h2>
+            </div>
+            <br><br>
+            <p>We thank the Google AI/ML Developer Programs team for supporting us
+            with Google Cloud Credits.</p>
+            <br><br>
         </div>
-    </div>
 </section>
 <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
         <pre><code>@misc{banerjee2025synthTRIPS,
-      title={SynthTRIPS: TBD title},
+      title={SynthTRIPS: A Knowledge-Grounded Framework for Benchmark Query Generation for Personalized Tourism Recommenders},
       author={Ashmi Banerjee and Adithi Satish and Fitri Nur Aisyah and
       Wolfgang Wörndl and Yashar Deldjoo},
       year={2025},
