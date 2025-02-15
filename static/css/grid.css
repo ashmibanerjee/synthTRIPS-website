@@ -1,0 +1,33 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* grid-template-columns: repeat(4, 1fr); 4 columns for 4 methods */
+    gap: 10px; /* Adjust the gap between grid items as needed */
+}
+
+.grid-item {
+    text-align: center; /* Center the content */
+}
+
+.grid-item img {
+    width: 100%; /* Adjust the width as needed */
+    height: auto; /* Adjust the height as needed */
+    /* height: auto; Maintain aspect ratio */
+}
+
+.grid-data {
+    text-align: center; /* Center the content */
+}
+
+.grid-data img {
+    width: 100%; /* Adjust the width as needed */
+    height: 100%; /* Adjust the height as needed */
+    /* height: auto; Maintain aspect ratio */
+}
+
+.image-label {
+    margin-top: 1.5rem; /* Space between image and label */
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
