@@ -142,37 +142,27 @@
             </div>
             <br><br>
             <p>
-                Tourism Recommender Systems (TRS) are crucial in personalizing
-                travel experiences by tailoring recommendations to users’
-                preferences, constraints, and contextual factors. However,
-                publicly available travel datasets often lack sufficient breadth
-                and depth, limiting their ability to support advanced
-                personalization strategies— particularly for sustainable travel
-                and off-peak tourism.
-                In this work, we explore using Large Language Models (LLMs) to
-                generate synthetic travel queries that emulate diverse user
-                personas and incorporate structured filters such as budget
-                constraints and sustainability preferences.</p>
+                Tourism Recommender Systems (TRS) are crucial in personalizing travel experiences by tailoring
+                recommendations to users’ preferences, constraints, and contextual factors. However, publicly available
+                travel datasets often lack sufficient breadth and depth, limiting their ability to support advanced
+                personalization strategies—-particularly for sustainable travel and off-peak tourism.
+                In this work, we explore using Large Language Models (LLMs) to generate synthetic travel queries that
+                emulate diverse user personas and incorporate structured filters such as budget constraints and
+                sustainability preferences. </p>
 
             <p>
                 <br>
-                This paper introduces a novel framework, SynthTRIPS, for
-                generating synthetic travel queries using LLMs grounded in a
-                curated knowledge base (KB). Our approach combines persona-based
-                preferences (e.g., budget, travel style) with explicit
-                sustainability filters (e.g., walkability, carbon footprint) to
-                produce realistic and diverse queries.
-                We mitigate hallucination and ensure factual correctness by
-                grounding the LLM responses in the KB.
-                We formalize the query generation process and introduce
-                evaluation metrics for assessing realism and alignment. Both
-                human expert evaluations and automatic LLM-based assessments
-                demonstrate the effectiveness of our synthetic dataset in
-                capturing complex personalization aspects underrepresented in
+                This paper introduces a novel framework, SynthTRIPS, for generating synthetic travel queries using LLMs
+                grounded in a curated knowledge base (KB). Our approach combines persona-based preferences (e.g.,
+                budget, travel style) with explicit sustainability filters (e.g., walkability, air quality) to produce
+                realistic and diverse queries.
+                We mitigate hallucination and ensure factual correctness by grounding the LLM responses in the KB.
+                We formalize the query generation process and introduce evaluation metrics for assessing realism and
+                alignment. Both human expert evaluations and automatic LLM-based assessments demonstrate the
+                effectiveness of our synthetic dataset in capturing complex personalization aspects underrepresented in
                 existing datasets.
-                While our framework was developed and tested for personalized
-                city trip recommendations, the methodology applies to other
-                recommender system domains. </p>
+                While our framework was developed and tested for personalized city trip recommendations, the methodology
+                applies to other recommender system domains.</p>
             <p>
                 <br>
                 Code and dataset are made public at:
@@ -186,12 +176,22 @@
                 <h2 class="title is-3 has-text-centered">SynthTRIPS</h2>
             </div>
             <br><br>
-            <p>
-                Our methodology is built on.... [add method description +
-                flowchart]
-            </p>
+            <p>Figure 1 in the paper illustrates the proposed <strong>SynthTRIPS</strong> framework for generating synthetic travel queries using <strong>LLMs</strong>. The diagram highlights three key components:</p>
+            <br>
+            <ul style="list-style-type:circle; padding-left: 2rem;">
+                <li><strong>Persona Hub:</strong> A structured repository of diverse user personas that influence query generation. This ensures personalization by incorporating user-specific preferences such as budget, travel style, and sustainability concerns.</li>
+                <li><strong>Travel Filters:</strong> A set of constraints applied to queries, including <em>budget</em>, <em>seasonality</em>, <em>walkability</em>, <em>air quality</em>, and <em>destination popularity</em>. These filters guide the LLMs in generating queries that reflect real-world constraints.</li>
+                <li><strong>Contextual Prompting with KB Grounding:</strong> The LLM is prompted with knowledge-grounded inputs from a curated <strong>Knowledge Base (KB)</strong> that contains factual information about destinations. This mitigates hallucination and ensures queries are realistic and contextually accurate.</li>
+            </ul><br>
+            <p>The figure visually represents how these components interact, showing a flow from persona selection and filter application to structured prompting and final query generation. This framework enables the automated creation of diverse, sustainability-aware travel queries, which can be used to benchmark personalized tourism recommender systems.</p>
+
             <br><br>
-            <img alt="Method Overview" src="images/methodology.png">
+            <figure>
+                <img alt="Method Overview" src="static/images/workflow.png">
+                <figcaption style="text-align: center">[Fig.1] SynthTRIPS: Our proposed framework for generating synthetic data using LLMs for personalized, sustainable city trips..
+                </figcaption>
+            </figure>
+
             <br><br>
             <br><br>
             <div class="row">
@@ -200,29 +200,35 @@
             <br><br>
             <p>
                 <a
-                    href="https://huggingface.co/datasets/ashmib/synthTRIPS"
-                    style="font-size: large"
-            >[Data Repository] </a>
+                        href="https://huggingface.co/datasets/ashmib/synthTRIPS"
+                        style="font-size: large"
+                >[Data Repository] </a>
             </p> <br>
             <ul style="list-style-type:disc;">
                 <li>A
-                    <strong><a href="https://huggingface.co/datasets/ashmib/synthTRIPS/blob/main/kb/eu-cities-database.csv">comprehensive Knowledge Base (KB)</a></strong> covering
+                    <strong><a
+                            href="https://huggingface.co/datasets/ashmib/synthTRIPS/blob/main/kb/eu-cities-database.csv">comprehensive
+                        Knowledge Base (KB)</a></strong> covering
                     <strong>200
-                    European cities
-                    across 43 countries</strong>.
+                        European cities
+                        across 43 countries</strong>.
                     <ul style="list-style-type:circle; padding-left: 2rem;">
                         <li> It includes detailed
                             information on points
-                            of interest (e.g., attractions, activities, and destinations),</li>
+                            of interest (e.g., attractions, activities, and destinations),
+                        </li>
                         <li>Destination popularity</li>
                         <li>Estimated monthly visitor footfall
-                            (seasonality) and</li>
+                            (seasonality) and
+                        </li>
                         <li>Key sustainability metrics such as
-                            walkability and air quality index (AQI). </li>
+                            walkability and air quality index (AQI).
+                        </li>
                     </ul>
-              This Knowledge Base <strong>(.csv format)</strong> was used to generate queries
+                    This Knowledge Base <strong>(.csv format)</strong> was used to generate queries
                     using
-                    LLMs.</li>
+                    LLMs.
+                </li>
                 <br>
                 <li><strong>
                     <a
@@ -234,14 +240,16 @@
                         configurations</strong> in 3
                     settings --
                     <strong> vanilla
-                    (v/Non-personalized),
-                    personalized-zero-shot (p0) and personalized-single-shot
+                        (v/Non-personalized),
+                        personalized-zero-shot (p0) and personalized-single-shot
                         (p1)</strong> using:
                     <ul style="list-style-type:circle; padding-left: 2rem;">
-                        <li style="font-weight: bold"> <a
-                                href="https://huggingface.co/datasets/ashmib/synthTRIPS/blob/main/generated-queries/Llama3Point2Vision90B_generated_queries.json"> Llama-3.2-90b </a></li>
-                        <li style="font-weight: bold"> <a
-                                href="https://huggingface.co/datasets/ashmib/synthTRIPS/blob/main/generated-queries/Gemini1Point5Pro_generated_queries.json">Gemini-1.5-pro-002 </a></li>
+                        <li style="font-weight: bold"><a
+                                href="https://huggingface.co/datasets/ashmib/synthTRIPS/blob/main/generated-queries/Llama3Point2Vision90B_generated_queries.json">
+                            Llama-3.2-90b </a></li>
+                        <li style="font-weight: bold"><a
+                                href="https://huggingface.co/datasets/ashmib/synthTRIPS/blob/main/generated-queries/Gemini1Point5Pro_generated_queries.json">Gemini-1.5-pro-002 </a>
+                        </li>
                     </ul>
                 </li>
                 <br>
@@ -264,13 +272,13 @@
                     <img ,
                          alt="Distribution of the KB cities" src="static/images/cities_map.png" style="width:
                          70%;">
-                    <p class="image-label">Distribution of the cities in our KB,
+                    <p class="image-label">[Fig. 2a] Distribution of the cities in our KB,
                         grouped by popularity levels.</p>
                 </div>
             </div>
             <br><br>
-            <p style="text-align: center; color: black">
-                Radar Chart showing the different dimensions of validation
+            <p style="text-align: center; color: black; background-color: #d5d5d5; padding: 1rem;">
+                [Fig. 2b] Radar Chart showing the different dimensions of validation
                 and performance of queries generated by the two models.
                 L (E) denotes LLM (Expert) validations.
             </p>
@@ -299,13 +307,16 @@
             >[Link to Code @ GitHub] </a> <br><br>
             </p>
             <p>
-                    <ul style="list-style-type:disc;">
-                        <li><a href="https://github.com/ashmibanerjee/synthTRIPS-code/tree/main/src">Query Generation Code</a></li>
-                        <li><a href="https://github.com/ashmibanerjee/synthTRIPS-code/tree/main/tests">Evaluation Code & Analysis</a></li>
-                        <li>If you want to try out our <strong>Query Generation pipeline</strong>, check out the
-                            <a href="https://github.com/ashmibanerjee/synthTRIPS-code/blob/main/SynthTRIPS_Query_Gen_Pipeline.ipynb">Google Colab Notebook</a> here.
-                        </li>
-                    </ul>
+            <ul style="list-style-type:disc;">
+                <li><a href="https://github.com/ashmibanerjee/synthTRIPS-code/tree/main/src">Query Generation Code</a>
+                </li>
+                <li><a href="https://github.com/ashmibanerjee/synthTRIPS-code/tree/main/tests">Evaluation Code &
+                    Analysis</a></li>
+                <li>If you want to try out our <strong>Query Generation pipeline</strong>, check out the
+                    <a href="https://github.com/ashmibanerjee/synthTRIPS-code/blob/main/SynthTRIPS_Query_Gen_Pipeline.ipynb">Google
+                        Colab Notebook</a> here.
+                </li>
+            </ul>
             </p>
             <br><br>
             <div class="row">
@@ -319,7 +330,7 @@
             <p>When prompted for a Validation code, please use <strong>SynthTRIPS2025</strong></p>
             <figure>
                 <img alt="Evaluation Tool" src="./static/images/eval_tool.png">
-                <figcaption style="text-align: center">Screenshot from our <a
+                <figcaption style="text-align: center">[Fig. 3] Screenshot from a part of our <a
                         href="https://huggingface.co/spaces/ashmib/user-feedback">
                     Expert
                     Evaluation
@@ -334,7 +345,7 @@
             <p>We thank the <strong>Google AI/ML Developer Programs</strong>
                 team for
                 supporting us
-            with Google Cloud Credits.</p>
+                with Google Cloud Credits.</p>
         </div>
     </div>
 </section>
